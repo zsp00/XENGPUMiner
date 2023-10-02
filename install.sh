@@ -5,13 +5,10 @@ chmod +x build.sh
 pip install -U -r requirements.txt  
 ./build.sh -cuda_arch sm_87
 
-screen -S gpu0
+script /dev/null
+
 nohup ./xengpuminer -d 0 > gpu0 2>&1 &
-screen -S gpu1
 nohup ./xengpuminer -d 1 > gpu1 2>&1 &
-screen -S gpu2
 nohup ./xengpuminer -d 2 > gpu2 2>&1 &
-screen -S gpu3
 nohup ./xengpuminer -d 3 > gpu3 2>&1 &
-screen -S miner
 nohup python3 miner.py --gpu=true  > miner 2>&1 &
