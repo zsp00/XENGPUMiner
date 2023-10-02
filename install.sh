@@ -5,8 +5,6 @@ chmod +x build.sh
 pip install -U -r requirements.txt  
 ./build.sh -cuda_arch sm_87
 
-script /dev/null
-
 nohup ./xengpuminer -d 0 > gpu0 2>&1 &
 nohup ./xengpuminer -d 1 > gpu1 2>&1 &
 nohup ./xengpuminer -d 2 > gpu2 2>&1 &
